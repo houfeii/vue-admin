@@ -8,9 +8,9 @@
       fit
       highlight-current-row
     >
-      <el-table-column align="center" label="ID" width="95">
+      <el-table-column align="center" label="序号/ID" width="95">
         <template slot-scope="scope">
-          {{ scope.$index }}
+          {{ scope.$index }} / {{ scope.row.id }}
         </template>
       </el-table-column>
       <el-table-column label="Title">
@@ -40,11 +40,13 @@
         </template>
       </el-table-column>
     </el-table>
+    <pagination v-show="total>0" :total="total" :page.sync="listQuery.page" :limit.sync="listQuery.limit" @pagination="fetchData" />
   </div>
 </template>
 
 <script>
 import { getList } from '@/api/table'
+import Pagination from '@/components/Pagination' // secondary package based on el-pagination
 
 export default {
   filters: {
@@ -57,10 +59,18 @@ export default {
       return statusMap[status]
     }
   },
+  components: {
+    Pagination
+  },
   data() {
     return {
       list: null,
-      listLoading: true
+      listLoading: true,
+      total: 0,
+      listQuery: {
+        page: 1,
+        limit: 20
+      },
     }
   },
   created() {
@@ -69,9 +79,14 @@ export default {
   methods: {
     fetchData() {
       this.listLoading = true
-      getList().then(response => {
+      getList(this.listQuery).then(response => {
         this.list = response.data.items
-        this.listLoading = false
+        this.total = response.data.total
+
+        // Just to simulate the time of the request
+        setTimeout(() => {
+          this.listLoading = false
+        }, 1000)
       })
     }
   }

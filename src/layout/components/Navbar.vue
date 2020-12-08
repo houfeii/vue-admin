@@ -16,7 +16,7 @@
               Home
             </el-dropdown-item>
           </router-link>
-          <a target="_blank" href="https://github.io/houfeii">
+          <a target="_blank" href="https://github.com/houfeii">
             <el-dropdown-item>my github</el-dropdown-item>
           </a>
           <el-dropdown-item divided @click.native="logout">

@@ -1,6 +1,16 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">用户: {{ name }}</div>
+    <fm-making-form 
+      ref="makingform" 
+      style="height: 500px;"
+      upload
+      preview 
+      generate-code 
+      generate-json
+      clearable
+    >
+      <template slot="action" />
+    </fm-making-form>
   </div>
 </template>
 
@@ -8,7 +18,7 @@
 import { mapGetters } from 'vuex'
 
 export default {
-  name: 'Dashboard',
+  name: 'FormMaking',
   computed: {
     ...mapGetters([
       'name'
