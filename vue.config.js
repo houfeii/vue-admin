@@ -30,6 +30,15 @@ module.exports = {
       warnings: false,
       errors: true
     },
+    // proxy: {
+    //   activity: {
+    //     target: `http://1v1-activity.xueba100.com`,
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       ['^/activity']: '/activity'
+    //     }
+    //   }
+    // },
     before: require('./mock/mock-server.js')
   },
   configureWebpack: {
