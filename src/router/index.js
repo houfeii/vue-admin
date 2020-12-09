@@ -43,6 +43,12 @@ export const constantRoutes = [
   },
 
   {
+    path: '/upimg',
+    component: () => import('@/views/upimg'),
+    hidden: true
+  },
+
+  {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -85,6 +91,19 @@ export const constantRoutes = [
         name: 'Form',
         component: () => import('@/views/form/index'),
         meta: { title: '表单', icon: 'form' }
+      }
+    ]
+  },
+
+  {
+    path: '/editor',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'Editor',
+        component: () => import('@/views/editor/index'),
+        meta: { title: '编辑器', icon: 'edit' }
       }
     ]
   },
