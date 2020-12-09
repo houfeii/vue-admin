@@ -59,7 +59,7 @@ export const constantRoutes = [
     component: Layout,
     redirect: '/example/table',
     name: 'Example',
-    meta: { title: '例子', icon: 'el-icon-s-help' },
+    meta: { title: '表格和树', icon: 'el-icon-s-help' },
     children: [
       {
         path: 'table',
@@ -151,12 +151,24 @@ export const constantRoutes = [
   {
     path: '/form_making',
     component: Layout,
+    redirect: '/form_making/making',
+    name: 'FormMaking',
+    meta: {
+      title: '表单设计器',
+      icon: 'guide'
+    },
     children: [
       {
-        path: 'form_making',
-        name: 'FormMaking',
-        component: () => import('@/views/form_making/index'),
-        meta: { title: '表单设计器', icon: 'guide' }
+        path: 'making',
+        component: () => import('@/views/form_making/making/index'),
+        name: 'making',
+        meta: { title: '制作表单' }
+      },
+      {
+        path: 'generate',
+        component: () => import('@/views/form_making/generate/index'),
+        name: 'generate',
+        meta: { title: '生成表单' }
       }
     ]
   },
