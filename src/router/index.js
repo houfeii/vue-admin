@@ -168,19 +168,6 @@ export const constantRoutes = [
   },
 
   {
-    path: '/form_making',
-    component: Layout,
-    children: [
-      {
-        path: 'form_making',
-        name: 'FormMaking',
-        component: () => import('@/views/form_making/index'),
-        meta: { title: '表单设计器', icon: 'guide' }
-      }
-    ]
-  },
-
-  {
     path: 'external-link',
     component: Layout,
     children: [
