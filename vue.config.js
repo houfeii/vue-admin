@@ -18,7 +18,7 @@ module.exports = {
    * 然后publicPath应设置为“/bar/”。 在大多数情况下，请使用“/”！！！
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  publicPath: '/',
+  publicPath: 'vue-admin',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
