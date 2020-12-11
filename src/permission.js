@@ -8,7 +8,7 @@ import getPageTitle from '@/utils/get-page-title'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
-const whiteList = ['/login', '/upimg'] // 白名单中重定向
+const whiteList = ['/login', '/up1', '/up2'] // 白名单中重定向
 
 // 每次路由变化 都需要经过 beforeEach 和 afterEach 方法
 router.beforeEach(async(to, from, next) => {

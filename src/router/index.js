@@ -43,8 +43,14 @@ export const constantRoutes = [
   },
 
   {
-    path: '/upimg',
-    component: () => import('@/views/upimg'),
+    path: '/up2',
+    component: () => import('@/views/up2'),
+    hidden: true
+  },
+
+  {
+    path: '/up1',
+    component: () => import('@/views/up1'),
     hidden: true
   },
 
@@ -188,6 +194,18 @@ export const constantRoutes = [
         component: () => import('@/views/form_making/generate/index'),
         name: 'generate',
         meta: { title: '生成表单' }
+      },
+      {
+        path: 'maked_demo',
+        component: () => import('@/views/form_making/maked_demo/index'),
+        name: 'maked_demo',
+        meta: { title: '制作表单demo' }
+      },
+      {
+        path: 'generated_demo',
+        component: () => import('@/views/form_making/generated_demo/index'),
+        name: 'generated_demo',
+        meta: { title: '生成表单demo' }
       }
     ]
   },

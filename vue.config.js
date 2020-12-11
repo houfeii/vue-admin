@@ -30,16 +30,16 @@ module.exports = {
       warnings: false,
       errors: true
     },
-    // proxy: {
-    //   activity: {
-    //     target: `http://1v1-activity.xueba100.com`,
-    //     changeOrigin: true,
-    //     pathRewrite: {
-    //       ['^/activity']: '/activity'
-    //     }
-    //   }
-    // },
-    before: require('./mock/mock-server.js')
+    proxy: {
+      activity: {
+        target: `http://1v1-activity.xueba100.com`,
+        changeOrigin: true,
+        pathRewrite: {
+          ['^/activity']: '/activity'
+        }
+      }
+    },
+    // before: require('./mock/mock-server.js')
   },
   configureWebpack: {
     // 在webpack的name字段中提供应用程序的标题，以便它可以在索引.html插入正确的标题。

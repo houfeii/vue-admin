@@ -1,18 +1,10 @@
 <template>
   <div class="dashboard-container">
-    <el-alert type="success" :closable="false" title="设计表单" />
-    <p style="padding: '0 10px';">
-      <el-button type="danger" size="mini" @click="save">保存</el-button>
-      <el-button type="info" size="mini" @click="goGenerate">跳转</el-button>
-    </p>
+    <el-alert type="success" :closable="false" title="设计的表单会在生成表单的 menu 下预览" />
     <el-row>
-      <fm-generate-form 
-      :data="jsonData" 
-      ref="generateForm"
-    >
-    </fm-generate-form>
-    </el-row>
-    <el-row>
+      <p style="paddingBottom: '10px';">
+        <el-tag>表单设计器——将拖拽组件生成JSON</el-tag>
+      </p>
       <fm-making-form 
         ref="makingForm" 
         style="height: 500px;"
@@ -25,40 +17,26 @@
         <template slot="action" />
       </fm-making-form>
     </el-row>
+    <p style="paddingBottom: '10px';">
+      <el-button type="danger" size="mini" @click="save">点击保存设计的表单</el-button>
+    </p>
   </div>
 </template>
 
 <script>
-import GenerateFormJson from './GenerateFormJson.json'
-import ActivityGuide from './ActivityGuide.json'
 import { mapGetters } from 'vuex'
 export default {
   name: 'making',
-  data() {
-    return {
-      jsonData: GenerateFormJson,
-    }
-  },
   computed: {
     ...mapGetters([
       'formJson'
     ])
   },
-  mounted() {
-    this.$refs['makingForm'].setJSON(ActivityGuide)
-  },
   methods: {
     save() {
       const json = this.$refs['makingForm'].getJSON()
-      this.$refs.generateForm.getData().then(data => {
-        const result = { ...data, content: JSON.stringify(json) }
-        this.$store.dispatch('formMaking/setFormJson', result)
-      }).catch(e => {
-        console.log(e)
-      })
-    },
-    goGenerate() {
-      this.$router.push('generate')
+      const result = { content: JSON.stringify(json) }
+      this.$store.dispatch('formMaking/setFormJson', result)
     }
   }
 }

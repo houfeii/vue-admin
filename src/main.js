@@ -8,8 +8,12 @@ import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
 import VueEditor from "vue2-editor"
 
-import FormMaking from 'form-making'
-import 'form-making/dist/FormMaking.css'
+// import FormMaking from 'form-making'
+// import 'form-making/dist/FormMaking.css'
+// Vue.use(FormMaking, {lang: 'zh-CN'}) // en-US
+
+import FormMaking from './index'
+Vue.use(FormMaking)
 
 import '@/styles/index.scss' // global css
 
@@ -37,8 +41,6 @@ Vue.use(ElementUI, { locale })
 // Vue.use(ElementUI)
 
 Vue.use(VueEditor)
-
-Vue.use(FormMaking, {lang: 'zh-CN'}) // en-US
 
 Vue.config.productionTip = false
 

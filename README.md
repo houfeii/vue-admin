@@ -2,6 +2,10 @@
 
 > 本项目框架基于[a vue2.0 minimal admin template](https://github.com/PanJiaChen/vue-admin-template/)，更多请移步作者[PanJiaChen](https://github.com/PanJiaChen)
 
+> 该分支新增的 form—making 的 views 页面，并且对 form—making 进行了 2 次开发，不是很好，所有没有 merge 到 main 分支
+> 
+> [FormMaking](http://docs.form.making.link/)
+
 ## 开始
 
 ```bash

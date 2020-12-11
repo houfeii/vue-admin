@@ -1,9 +1,7 @@
 <template>
   <div style="padding:30px;">
     <el-alert type="success" :closable="false" title="生成表单" />
-    <p style="paddingBottom: '10px';">
-      <el-tag>表单生成器——使用JSON生成表单</el-tag>
-    </p>
+    <el-divider></el-divider>
     <fm-generate-form
       :data="jsonData" 
       @on-change="onChange"
@@ -18,22 +16,20 @@
 
 <script>
 import { mapGetters } from 'vuex'
+import ActivityGuide from '../maked_demo/ActivityGuide.json'
 export default {
   data() {
     return {
       jsonData: {
-        "list": [],
+        "list": [
+        ],
         "config": {
           "labelWidth": 100,
           "labelPosition": "right",
           "size": "small"
         }
       },
-      formData: {
-        /* 需要加载的表单数据可以在这里进行设置 */
-        /* 需要和生成的 name 属性一致 */
-        name: '测试默认数据'
-      }
+      formData: {}
     }
   },
   computed: {
@@ -42,7 +38,9 @@ export default {
     ])
   },
   mounted() {
-    this.jsonData = JSON.parse(this.formJson.content)
+    console.log(this.formJson.content)
+    if(this.formJson.content) this.jsonData = JSON.parse(this.formJson.content)
+    else this.jsonData = ActivityGuide
   },
   methods: {
     // 表单字段值改变后会触发 on-change 事件。
