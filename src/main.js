@@ -6,11 +6,6 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import locale from 'element-ui/lib/locale/lang/en' // lang i18n
 
-import VueEditor from "vue2-editor"
-
-import FormMaking from 'form-making'
-import 'form-making/dist/FormMaking.css'
-
 import '@/styles/index.scss' // global css
 
 import App from './App'
@@ -35,10 +30,6 @@ if (process.env.NODE_ENV === 'production') {
 Vue.use(ElementUI, { locale })
 // 如果想要中文版 element-ui，按如下方式声明
 // Vue.use(ElementUI)
-
-Vue.use(VueEditor)
-
-Vue.use(FormMaking, {lang: 'zh-CN'}) // en-US
 
 Vue.config.productionTip = false
 

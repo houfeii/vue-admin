@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A vue admin template",
   "author": "houfeii <houfei1995@gmail.com>",
+  "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
     "build:prod": "vue-cli-service build",
