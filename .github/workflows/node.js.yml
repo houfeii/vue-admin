@@ -32,5 +32,5 @@ jobs:
       with:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # 根据存储库的权限，您可能需要为操作提供GitHub个人访问令牌，而不是提供的GitHub令牌才能进行部署。
         BRANCH: gh-pages # 这是您希望部署到的分支，例如gh-pages或docs。
-        FOLDER: . # 存储库中要部署的文件夹
+        FOLDER: dist # 存储库中要部署的文件夹
         CLEAN: true # 自动从deploy分支中删除已删除的文件
